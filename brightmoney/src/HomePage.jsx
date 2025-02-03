@@ -92,10 +92,15 @@ export default function HomePage() {
           justifyContent="center"
           sx={{
             background: "transparent",
-            p: 3,
-            mb: 4,
+            // p: 3,
+            // mb: 4,
+            // mx: "auto",
+            // marginInline: { xs: 0, md: 32 },
+            px: { xs: 2, md: 8 }, // Increased left & right padding
+            py: 2, // Decreased top & bottom padding
+            mb: 2, // Reduced bottom margin
             mx: "auto",
-            marginInline: { xs: 0, md: 32 },
+            marginInline: { xs: 2, md: 10 }, // Ensuring responsiveness
           }}
         >
           <Grid2
