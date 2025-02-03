@@ -18,7 +18,7 @@
     </script>
 
     <!-- Google Tag Manager -->
-    <!-- <script>
+    <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -28,26 +28,102 @@
         j.async = true;
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-PKM8BZZ2");
-    </script> -->
+      })(window, document, "script", "dataLayer", "GTM-P87W8T9B");
+    </script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": "Bright Money",
+        "url": "https://www.brightmoney.co/",
+        "logo": "https://www.brightmoney.co/logo.png",
+        "description": "Bright Money helps individuals manage debt, build credit history, and access lower-cost credit using advanced AI-driven financial solutions.",
+        "foundingDate": "2019",
+        "founders": [
+          {
+            "@type": "Person",
+            "name": "Avi Patchava",
+            "jobTitle": "Co-Founder"
+          },
+          {
+            "@type": "Person",
+            "name": "Petko Plachkov",
+            "jobTitle": "Co-Founder"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/company/brightmoney",
+          "https://twitter.com/brightmoney",
+          "https://www.facebook.com/brightmoney"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Fintech Street",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "postalCode": "94105",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-800-555-0199",
+          "contactType": "customer service",
+          "email": "support@brightmoney.co"
+        },
+        "serviceType": "Debt Management & Credit Building",
+        "areaServed": "US",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Financial Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Debt Management",
+                "description": "Assist consumers in efficiently paying down debt using AI-driven algorithms."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Credit Building",
+                "description": "Help users build a strong credit history through responsible financial strategies."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Personal Loans",
+                "description": "Provide personal loan offers up to $10,000 to refinance high-interest credit cards."
+              }
+            }
+          ]
+        }
+      }
+    </script>
   </head>
 
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-PKM8BZZ2"
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-P87W8T9B"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
-      ></iframe>
-    </noscript> -->
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <div id="root"></div>
