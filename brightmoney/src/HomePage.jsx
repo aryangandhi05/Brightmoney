@@ -26,6 +26,9 @@ import calend from "./images/calendar.png";
 import React from "react";
 import card from "./images/card.png";
 import yahoo from "./images/yahoo.png";
+import bank from "./images/bank.png";
+import security from "./images/security.png";
+import dollar from "./images/dollor.png";
 
 export default function HomePage() {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
@@ -308,24 +311,61 @@ export default function HomePage() {
           <span style={{ fontWeight: "normal" }}>&nbsp;with Bright?</span>
         </Typography>
 
-        <Paper
+        <Box
           sx={{
-            background: "grey",
-            width: "1000px",
-            height: "1px",
-            mb: 4,
+            width: "100%",
+            border: "2.67px solid",
+            borderImageSource:
+              "linear-gradient(90deg, rgba(213, 215, 219, 0) 5.73%, #BAE8CB 84.9%)", // Adjust gradient direction to 90deg
+            borderImageSlice: 1,
+            my: 4, // Adds margin to the top and bottom of the line
           }}
-        ></Paper>
+        ></Box>
 
-        <img
-          src="src/images/payoffimage.png"
-          alt="Payoff"
-          style={{
-            maxWidth: "100%",
-            height: "auto",
-            display: "block",
-          }}
-        />
+        {/* FLEX CONTAINER TO KEEP ITEMS IN A SINGLE ROW */}
+        <Grid2
+          container
+          spacing={4}
+          justifyContent="center"
+          alignItems="center"
+          sx={{ display: "flex", flexWrap: "nowrap", gap: 4 }}
+        >
+          {/* First Item */}
+          <Grid2 item display="flex" alignItems="center" sx={{ width: "auto" }}>
+            <img
+              src={bank}
+              alt="Bank"
+              style={{ width: 100, height: 80, marginRight: 16 }}
+            />
+            <Typography variant="h6" color="gray">
+              Accepts all major bank cards
+            </Typography>
+          </Grid2>
+
+          {/* Second Item */}
+          <Grid2 item display="flex" alignItems="center" sx={{ width: "auto" }}>
+            <img
+              src={dollar}
+              alt="Money"
+              style={{ width: 100, height: 80, marginRight: 16 }}
+            />
+            <Typography variant="h6" color="gray">
+              Affordable monthly payments
+            </Typography>
+          </Grid2>
+
+          {/* Third Item */}
+          <Grid2 item display="flex" alignItems="center" sx={{ width: "auto" }}>
+            <img
+              src={security}
+              alt="Security"
+              style={{ width: 100, height: 80, marginRight: 16 }}
+            />
+            <Typography variant="h6" color="gray">
+              100% data security - 256-bit encryption
+            </Typography>
+          </Grid2>
+        </Grid2>
       </Grid2>
 
       <Grid2
@@ -889,7 +929,8 @@ export default function HomePage() {
       <Grid2
         container
         display={"flex"}
-        p={0.5}
+        py={0} // Reduced vertical padding (top & bottom)
+        px={0.2} // Keeps horizontal padding the same
         justifyContent={"center"}
         gap={48}
         alignItems={"center"}
@@ -898,7 +939,14 @@ export default function HomePage() {
             "linear-gradient(101.18deg, #E5F1E3 0.62%, #BAE8CB 69.56%)",
         }}
       >
-        <Grid2 item xs={6} sm={8} md={12} alignItems={"center"}>
+        <Grid2
+          item
+          xs={6}
+          sm={8}
+          md={12}
+          alignItems={"center"}
+          sx={{ mt: 0, mb: 0 }}
+        >
           <Typography variant="h4" fontWeight={"bold"} color="black">
             Crush Debt today <sup>1</sup>
           </Typography>
@@ -906,7 +954,14 @@ export default function HomePage() {
             with Bright
           </Typography>
         </Grid2>
-        <Grid2 item xs={6} sm={8} md={12} sx={{ backgroundColor: "#BAE8CB" }}>
+
+        <Grid2
+          item
+          xs={6}
+          sm={8}
+          md={12}
+          sx={{ backgroundColor: "#BAE8CB", mt: 0, mb: 0 }}
+        >
           <img
             src={card}
             alt="Card"
