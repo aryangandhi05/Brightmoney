@@ -29,6 +29,12 @@ import yahoo from "./images/yahoo.png";
 import bank from "./images/bank.png";
 import security from "./images/security.png";
 import dollar from "./images/dollor.png";
+import logo from "./images/logo.png";
+import playstoreapp from "./images/playstore.png";
+import mobileframeapp from "./images/mobileframe.png";
+import greencirclefront from "./images/greencircle.png";
+import starapp from "./images/star.png";
+import navpic from "./images/navapp.png";
 
 export default function HomePage() {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
@@ -119,7 +125,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
             >
               <img
-                src="src/images/logo.png"
+                src={logo}
                 alt="Bright Money"
                 style={{
                   maxWidth: "100px",
@@ -142,7 +148,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="src/images/apple.png"
+                  src={navpic}
                   alt="Apple Store"
                   style={{ maxWidth: "40px", height: "auto" }}
                 />
@@ -153,7 +159,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="src/images/playstore.png"
+                  src={playstoreapp}
                   alt="Play Store"
                   style={{
                     maxWidth: "40px",
@@ -269,13 +275,13 @@ export default function HomePage() {
             }}
           >
             <img
-              src="src/images/mobileframe.png"
+              src={mobileframeapp}
               width="100%"
               style={{ position: "relative", zIndex: 1 }}
             />
 
             <img
-              src="src/images/greencircle.png"
+              src={greencirclefront}
               style={{
                 position: "absolute",
                 top: "50%",
@@ -802,7 +808,7 @@ export default function HomePage() {
                         {[...Array(5)].map((_, i) => (
                           <img
                             key={i}
-                            src="src/images/star.png"
+                            src={starapp}
                             alt="star"
                             style={{ margin: "2px" }}
                           />
