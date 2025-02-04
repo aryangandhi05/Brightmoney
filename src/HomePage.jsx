@@ -11,7 +11,8 @@ import {
 } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Slider from "react-slick";
+//import Slider from "react-slick";
+import Slider from "@mui/material/Slider";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -35,6 +36,7 @@ import mobileframeapp from "./images/mobileframe.png";
 import greencirclefront from "./images/greencircle.png";
 import starapp from "./images/star.png";
 import navpic from "./images/navapp.png";
+import { GTAGS } from "./data/config";
 
 export default function HomePage() {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
@@ -98,10 +100,6 @@ export default function HomePage() {
           justifyContent="center"
           sx={{
             background: "transparent",
-            // p: 3,
-            // mb: 4,
-            // mx: "auto",
-            // marginInline: { xs: 0, md: 32 },
             px: { xs: 2, md: 8 }, // Increased left & right padding
             py: 2, // Decreased top & bottom padding
             mb: 2, // Reduced bottom margin
@@ -123,6 +121,9 @@ export default function HomePage() {
               href="https://www.brightmoney.co/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                window.gtag?.("event", GTAGS.SUCCESSFUL_BRIGHTMONEY_LOGO)
+              }
             >
               <img
                 src={logo}
@@ -146,6 +147,9 @@ export default function HomePage() {
                 href="https://apps.apple.com/us/app/bright-ai-debt-manager/id1511043796"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  window.gtag?.("event", GTAGS.SUCCESSFUL_NAVPIC_CLICK)
+                }
               >
                 <img
                   src={navpic}
@@ -157,6 +161,9 @@ export default function HomePage() {
                 href="https://play.google.com/store/apps/details?id=com.brightcapital.app&hl=en_IN"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  window.gtag?.("event", GTAGS.SUCCESSFUL_PLAYSTORE_CLICK)
+                }
               >
                 <img
                   src={playstoreapp}
@@ -542,6 +549,9 @@ export default function HomePage() {
                 fontSize: "16px",
                 "&:hover": { backgroundColor: "transparent" },
               }}
+              onClick={() =>
+                window.gtag?.("event", GTAGS.SUCCESSFUL_APPLYNOW_CLICK)
+              }
             >
               Apply Now
             </Button>
@@ -609,6 +619,9 @@ export default function HomePage() {
                 fontSize: "16px",
                 "&:hover": { backgroundColor: "transparent" },
               }}
+              onClick={() =>
+                window.gtag?.("event", GTAGS.SUCCESSFUL_APPLYNOW_CLICK)
+              }
             >
               Apply Now
             </Button>
@@ -725,6 +738,9 @@ export default function HomePage() {
                 fontSize: "16px",
                 "&:hover": { backgroundColor: "transparent" },
               }}
+              onClick={() =>
+                window.gtag?.("event", GTAGS.SUCCESSFUL_APPLYNOW_CLICK)
+              }
             >
               Apply Now
             </Button>
