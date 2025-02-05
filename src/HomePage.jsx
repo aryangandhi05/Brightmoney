@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Grid2,
   Paper,
@@ -11,8 +12,8 @@ import {
 } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-//import Slider from "react-slick";
-import Slider from "@mui/material/Slider";
+import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -24,7 +25,6 @@ import bloom from "./images/bloom.png";
 import appimg from "./images/appimage.png";
 import visacards from "./images/visacard.png";
 import calend from "./images/calendar.png";
-import React from "react";
 import card from "./images/card.png";
 import yahoo from "./images/yahoo.png";
 import bank from "./images/bank.png";
@@ -404,10 +404,7 @@ export default function HomePage() {
         >
           <Grid2
             item
-            xs={6}
-            sm={8}
-            md={12}
-            sx={{ maxWidth: "1200px", width: "100%" }}
+            sx={{ maxWidth: "1000px", width: "100%", xs: 12, sm: 8, md: 6 }}
           >
             <div style={{ width: "100%", margin: "auto", overflow: "hidden" }}>
               <Slider {...settings}>
@@ -781,6 +778,7 @@ export default function HomePage() {
           See how Bright users<sup>3</sup> reached financial well-being.
         </Typography>
 
+        {/* problem */}
         <Grid2
           container
           justifyContent="center"
@@ -793,10 +791,7 @@ export default function HomePage() {
           >
             <Grid2
               item
-              xs={6}
-              sm={8}
-              md={12}
-              sx={{ maxWidth: "1200px", width: "100%" }}
+              sx={{ maxWidth: "1200px", width: "100%", xs: 12, sm: 8, md: 6 }}
             >
               <div
                 style={{ width: "100%", margin: "auto", overflow: "hidden" }}
