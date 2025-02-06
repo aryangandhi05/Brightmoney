@@ -13,7 +13,6 @@ import {
 import Checkbox from "@mui/material/Checkbox";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -79,8 +78,31 @@ export default function HomePage() {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
-
+  const settings2 = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+  };
   return (
     <>
       <Grid2
@@ -100,11 +122,11 @@ export default function HomePage() {
           justifyContent="center"
           sx={{
             background: "transparent",
-            px: { xs: 2, md: 8 }, // Increased left & right padding
-            py: 2, // Decreased top & bottom padding
-            mb: 2, // Reduced bottom margin
+            px: { xs: 2, md: 8 },
+            py: 2,
+            mb: 2,
             mx: "auto",
-            marginInline: { xs: 2, md: 10 }, // Ensuring responsiveness
+            marginInline: { xs: 2, md: 10 },
           }}
         >
           <Grid2
@@ -139,7 +161,7 @@ export default function HomePage() {
               <Typography
                 variant="body1"
                 fontWeight="bold"
-                sx={{ color: "#787F88", mr: 1 }}
+                sx={{ color: "#787F88", display: { xs: "none", sm: "flex" } }}
               >
                 AVAILABLE ON APPSTORE AND PLAYSTORE
               </Typography>
@@ -197,7 +219,11 @@ export default function HomePage() {
           justifyContent="space-between"
           alignItems="center"
           display="flex"
-          marginInline={36}
+          direction={"column"}
+          sx={{
+            flexDirection: { xs: "column", sm: "row" },
+            marginInline: { xs: 12, sm: 12, md: 32 },
+          }}
         >
           <FormControlLabel
             sx={{ color: "black" }}
@@ -281,54 +307,57 @@ export default function HomePage() {
               justifyContent: "center",
             }}
           >
-            <img
+            <Box
+              component="img"
               src={mobileframeapp}
-              width="100%"
-              style={{ position: "relative", zIndex: 1 }}
+              sx={{
+                position: { sm: "relative", xs: "absolute" },
+                width: { md: "100%", xs: "250px" },
+                height: { xs: "500px", sm: "auto" },
+                zIndex: 1,
+                top: "-60px",
+              }}
             />
-
-            <img
+            <Box
+              component="img"
               src={greencirclefront}
-              style={{
+              sx={{
                 position: "absolute",
                 top: "50%",
                 right: "-40%",
                 transform: "translate(-50%, -50%)",
                 width: "400px",
                 zIndex: 2,
+                display: { xs: "none", md: "flex" },
               }}
-            />
+            />{" "}
+                 
           </Box>
         </Grid2>
       </Grid2>
 
       <Grid2
-        item
-        xs={6}
-        sm={8}
-        md={12}
-        p={8}
-        display="flex"
         container
+        item
+        xs={12}
+        p={4}
+        display="flex"
         justifyContent="center"
         alignItems="center"
-        flexDirection="column"
-        backgroundColor="white"
+        sx={{ backgroundColor: "white", pt: { xs: 48, sm: 6 } }}
       >
         <Typography
           variant="h3"
-          display="flex"
-          textAlign="center"
+          align="center"
           color="black"
           fontWeight="bold"
-          mb={8}
-          justifyContent="center"
-          alignItems="center"
+          mr={2}
         >
-          Why pay off cards{" "}
-          <span style={{ fontWeight: "normal" }}>&nbsp;with Bright?</span>
+              Why pay off cards  
         </Typography>
-
+        <Typography variant="h3" align="center" color="black">
+          with Bright?    
+        </Typography>
         <Box
           sx={{
             width: "100%",
@@ -336,7 +365,7 @@ export default function HomePage() {
             borderImageSource:
               "linear-gradient(90deg, rgba(213, 215, 219, 0) 5.73%, #BAE8CB 84.9%)", // Adjust gradient direction to 90deg
             borderImageSlice: 1,
-            my: 4, // Adds margin to the top and bottom of the line
+            my: 4,
           }}
         ></Box>
 
@@ -346,7 +375,12 @@ export default function HomePage() {
           spacing={4}
           justifyContent="center"
           alignItems="center"
-          sx={{ display: "flex", flexWrap: "nowrap", gap: 4 }}
+          sx={{
+            display: "flex",
+            flexWrap: "nowrap",
+            gap: 4,
+            flexDirection: { xs: "column", sm: "row", mt: 8 },
+          }}
         >
           {/* First Item */}
           <Grid2 item display="flex" alignItems="center" sx={{ width: "auto" }}>
@@ -404,7 +438,10 @@ export default function HomePage() {
         >
           <Grid2
             item
-            sx={{ maxWidth: "1000px", width: "100%", xs: 12, sm: 8, md: 6 }}
+            xs={6}
+            sm={8}
+            md={12}
+            sx={{ maxWidth: "1200px", width: "100%" }}
           >
             <div style={{ width: "100%", margin: "auto", overflow: "hidden" }}>
               <Slider {...settings}>
@@ -441,27 +478,20 @@ export default function HomePage() {
         </Grid2>
       </Grid2>
 
-      <Grid2
-        item
-        xs={6}
-        sm={8}
-        md={12}
-        sx={{ backgroundColor: "#F6FEF7", color: "black" }}
-        p={6}
-      >
+      <Grid2 item sx={{ backgroundColor: "#F6FEF7", color: "black" }} p={2}>
         <Typography
           variant="h3"
-          display="flex"
-          textAlign="center"
+          align="center"
           color="black"
           fontWeight="bold"
-          mb={4}
-          justifyContent="center"
-          alignItems="center"
+          mt={8}
         >
-          How to pay off cards{" "}
-          <span style={{ fontWeight: "normal" }}>&nbsp;with Bright?</span>
+          How to pay off cards    
         </Typography>
+        <Typography variant="h3" align="center" color="black" mb={4}>
+                  with Bright?    
+        </Typography>
+
         <Box
           sx={{
             width: "100%",
@@ -469,7 +499,7 @@ export default function HomePage() {
             borderImageSource:
               "linear-gradient(90deg, rgba(213, 215, 219, 0) 5.73%, #BAE8CB 84.9%)", // Adjust gradient direction to 90deg
             borderImageSlice: 1,
-            my: 4, // Adds margin to the top and bottom of the line
+            my: 4,
           }}
         ></Box>
         <Grid2
@@ -660,7 +690,6 @@ export default function HomePage() {
             }}
           ></Box>
         </Grid2>
-
         <Grid2
           container
           spacing={4}
@@ -753,8 +782,8 @@ export default function HomePage() {
         sx={{
           backgroundColor: "white",
           color: "black",
-          paddingInline: 18,
-          paddingBlock: 16,
+          paddingInline: { xs: 4, sm: 8, md: 18 },
+          paddingBlock: { xs: 4, sm: 8, md: 16 },
         }}
       >
         <Typography
@@ -789,10 +818,7 @@ export default function HomePage() {
             justifyContent="center"
             sx={{ width: "100%", overflow: "hidden" }}
           >
-            <Grid2
-              item
-              sx={{ maxWidth: "1200px", width: "100%", xs: 12, sm: 8, md: 6 }}
-            >
+            <Grid2 item sx={{ maxWidth: "1200px", width: "100%" }}>
               <div
                 style={{ width: "100%", margin: "auto", overflow: "hidden" }}
               >
@@ -810,8 +836,8 @@ export default function HomePage() {
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        borderRadius: "10px", // Rounded corners for each individual testimonial box
-                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Optional: Adds a subtle shadow for better visual effect
+                        borderRadius: "10px",
+                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                         overflow: "hidden",
                       }}
                     >
@@ -829,12 +855,12 @@ export default function HomePage() {
                       <Typography
                         variant="body2"
                         sx={{
-                          width: "200px", // Ensuring a fixed width
+                          width: "200px",
                           margin: "auto",
-                          overflow: "hidden", // Hide overflow content
+                          overflow: "hidden",
                           display: "inline-block",
-                          wordWrap: "break-word", // Allows the text to break and wrap
-                          textAlign: "center", // Align text to center within the box
+                          wordWrap: "break-word",
+                          textAlign: "center",
                         }}
                       >
                         {testimonial.text}
@@ -842,7 +868,7 @@ export default function HomePage() {
                         <strong
                           style={{
                             display: "block",
-                            wordWrap: "break-word", // Ensure the name stays within the box
+                            wordWrap: "break-word",
                           }}
                         >
                           {testimonial.author}
@@ -865,8 +891,8 @@ export default function HomePage() {
         sx={{
           backgroundColor: "white",
           color: "black",
-          paddingInline: 16,
-          paddingBlock: 10,
+          paddingInline: { xs: 4, sm: 8, md: 18 },
+          paddingBlock: { xs: 4, sm: 8, md: 16 },
         }}
       >
         <Typography
@@ -951,24 +977,15 @@ export default function HomePage() {
       <Grid2
         container
         display={"flex"}
-        py={0} // Reduced vertical padding (top & bottom)
-        px={0.2} // Keeps horizontal padding the same
         justifyContent={"center"}
-        gap={48}
+        gap={12}
         alignItems={"center"}
         sx={{
           background:
             "linear-gradient(101.18deg, #E5F1E3 0.62%, #BAE8CB 69.56%)",
         }}
       >
-        <Grid2
-          item
-          xs={6}
-          sm={8}
-          md={12}
-          alignItems={"center"}
-          sx={{ mt: 0, mb: 0 }}
-        >
+        <Grid2 item alignItems={"center"} justifyContent={"center"}>
           <Typography variant="h4" fontWeight={"bold"} color="black">
             Crush Debt today <sup>1</sup>
           </Typography>
@@ -977,13 +994,7 @@ export default function HomePage() {
           </Typography>
         </Grid2>
 
-        <Grid2
-          item
-          xs={6}
-          sm={8}
-          md={12}
-          sx={{ backgroundColor: "#BAE8CB", mt: 0, mb: 0 }}
-        >
+        <Grid2 item sx={{ backgroundColor: "#BAE8CB" }}>
           <img
             src={card}
             alt="Card"
@@ -994,13 +1005,10 @@ export default function HomePage() {
 
       <Grid2
         item
-        xs={6}
-        sm={8}
-        md={12}
         sx={{
           backgroundColor: "white",
           color: "black",
-          paddingInline: 16,
+          paddingInline: { xs: 4, sm: 16 },
           paddingBlock: 10,
         }}
       >
